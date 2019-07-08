@@ -1,4 +1,4 @@
-#!/Users/chelsea/practice/python/monte/venv python
+#! /usr/bin/env python
 
 from flask import Flask, render_template, request, Response
 from models import *
@@ -61,12 +61,12 @@ def monte_carlo():
 		if (request.form['num_sims'] == ''):
 			num_sims = 100
 		else:
-			num_sims = int(num_sims)
+			num_sims = int(request.form['num_sims'])
 
 		if (request.form['days_out'] == ''):
-			days_out = 100
+			days_out = 252
 		else:
-			days_out = int(days_out)
+			days_out = int(request.form['days_out'])
 
 		ticker = request.form['MC-ticker']
 
