@@ -1,0 +1,33 @@
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='style.css') }}">
+	<link rel="stylesheet" href="https://cdn.pydata.org/bokeh/release/bokeh-1.1.0.min.css" type="text/css" />
+	<link rel="stylesheet" href="https://cdn.pydata.org/bokeh/release/bokeh-widgets-1.1.0.min.css" type="text/css" />
+	<link rel="stylesheet" href="https://cdn.pydata.org/bokeh/release/bokeh-tables-1.1.0.min.css" type="text/css">
+
+	<script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-1.1.0.min.js"></script>
+	<script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-api-1.1.0.min.js"></script>
+	<script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-widgets-1.1.0.min.js"></script>
+	<script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-tables-1.1.0.min.js"></script>
+</head>
+
+<body>
+
+<h6><a href="/">Home</a></h6>
+
+<p id ="ticker"><b>Ticker</b>: {{ticker}}</p>
+
+<div class = "row">
+	<div class="six columns">
+		{{ historicals_script|safe }}
+		{{ historicals_div|safe }}
+	</div>
+	<div class="six columns">
+		{{ monte_script|safe }}
+		{{ monte_div|safe }}
+	</div>
+</div>
+
+</body>
+</html>	

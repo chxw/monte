@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<meta charset="utf-8">
+	<title>Home</title>
+	<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='style.css') }}">
+
+</head>
+<body>
+
+<h6><a href="/">Home</a></h6>
+
+<h6><i> Company data </i></h6>
+<div class="row">
+	<div class="eleven columns">
+		<form target="_blank" action="/ticker" method = "POST">
+			Search company by ticker: <input type="text" name="ticker">
+			<input type="submit" value="Submit">
+		</form>
+	</div>
+</div>
+
+<h6><i>Monte carlo simulation</i></h6>
+<form action="/MC" method="POST">
+	<div class="row">
+		<div class="three columns">
+			<label for="MC-ticker">Ticker</label>
+			<input class="u-full-width" type="text" placeholder="AAPL" name="MC-ticker">
+		</div>
+		<div class="three columns">
+			<label for="historicals-time-range">Historical price time range</label>
+				<select name="range-select" class="u-full-width">
+					<option value="5y">5y</option>
+					<option value="2y">2y</option>
+					<option value="1y">1y</option>
+					<option value="ytd">ytd</option>
+					<option value="6m">6m</option>
+					<option value="3m">3m</option>
+					<option value="1m">1m</option>
+				</select>
+		</div>
+		<div class="three columns">
+			<label for="num_sims">Number of Simulations</label>
+			<input class="u-full-width" type="number" placeholder="100" name="num_sims">
+		</div>
+		<div class="three columns">
+			<label for="days_out">Days out</label>
+			<input class="u-full-width" type="number" placeholder="252" name="days_out">
+		</div>
+		<div class="three columns">
+			<input class="button-primary" type="submit" value="Run" style="display:none">
+		</div>
+	</div>
+</form>
+
+<form name="Investment" id="Investment" style="display:none">
+	<div class="three columns">
+		<label for="exampleEmailInput">Ticker</label>
+		<input class="u-full-width" type="email" placeholder="test@mailbox.com" id="exampleEmailInput">
+	</div>
+</form>
+<form name="CD" id="CD" style="display:none">
+	<div class="three columns">
+		<label for="exampleEmailInput">Interest rate</label>
+		<input class="u-full-width" type="email" placeholder="test@mailbox.com" id="exampleEmailInput">
+	</div>
+</form>
+<form name="Savings" id="Savings" style="display:none">
+	<div class="three columns">
+		<label for="exampleEmailInput">Interest rate</label>
+		<input class="u-full-width" type="email" placeholder="test@mailbox.com" id="exampleEmailInput">
+	</div>
+</form>
+
+</body>
+</html>

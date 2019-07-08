@@ -1,0 +1,41 @@
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='style.css') }}">
+	<link rel="stylesheet" href="https://cdn.pydata.org/bokeh/release/bokeh-1.1.0.min.css" type="text/css" />
+	<link rel="stylesheet" href="https://cdn.pydata.org/bokeh/release/bokeh-widgets-1.1.0.min.css" type="text/css" />
+	<link rel="stylesheet" href="https://cdn.pydata.org/bokeh/release/bokeh-tables-1.1.0.min.css" type="text/css">
+
+	<script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-1.1.0.min.js"></script>
+	<script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-api-1.1.0.min.js"></script>
+	<script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-widgets-1.1.0.min.js"></script>
+	<script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-tables-1.1.0.min.js"></script>
+</head>
+
+<body>
+<h6><a href="/">Home</a></h6>
+
+<p> <b>Ticker</b>: {{company["symbol"]}} </p>
+<p> <b>Company</b>: <a href={{company['website']}}> {{company["companyName"]}} </a></p>
+<p>	<b>Description</b>: {{company["description"]}} </p>
+<p>	<b>Industry</b>: {{company["industry"]}} </p>
+<p>	<b>Sector</b>: {{company["sector"]}} </p>
+<p>	<b>Exchange</b>: {{company["exchange"]}} </p>
+<p>	<b>CEO</b>: {{company["CEO"]}} </p>
+
+<p>	<b>Last Sale Price</b>: ${{tops["lastSalePrice"]}} </p>
+<p>	<b>Last Sale Size</b>: {{tops["lastSaleSize"]}} </p>
+<p>	<b>Volume</b>: {{tops["volume"]}} </p>
+
+<table class="u-full-width">
+	<caption>Financials</caption>
+	{% for key, value in financials.items() %}
+		<tr>
+			<th> {{ key }} </th>
+    		<td> {{ value }} </td>
+    	</tr>
+	{% endfor %}
+</table>
+
+</body>
+</html>	
