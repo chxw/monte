@@ -10,3 +10,6 @@ Created for learning purposes only. Specifically for python practice and using f
 - `pip install -r requirements.txt`
 - `flask run`
 - Open browser and enter whatever address flask gives you in `* Running on http:// .... /`
+## To do:
+- Launching and hosting website cheaply
+- AYLIEN API for sentiment analysis
