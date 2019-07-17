@@ -1,33 +1,9 @@
-#! /usr/bin/env python
-
 from flask import Flask, render_template, request, Response
 from models import *
 from graph_tools import *
 
 import urllib
 import requests
-import math
-import statistics
-import pandas as pd
-import datetime as dt
-import numpy as np
-import matplotlib.pyplot as plt
-from matplotlib import style
-import io
-import base64
-import re
-import wordninja
-
-from bokeh.io import curdoc
-from bokeh.models import HoverTool
-from bokeh.models.formatters import DatetimeTickFormatter
-from bokeh.models.widgets import Slider
-from datetime import datetime
-from bokeh.layouts import gridplot
-from bokeh.plotting import figure, show, output_file
-from bokeh.palettes import Category20_10 as palette
-from bokeh.embed import components
-import itertools 
 
 app = Flask(__name__)
 

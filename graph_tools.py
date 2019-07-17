@@ -1,7 +1,3 @@
-from flask import Flask, render_template, request, Response
-from models import *
-import urllib
-import requests
 import math
 import statistics
 import pandas as pd
@@ -9,10 +5,6 @@ import datetime as dt
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib import style
-import io
-import base64
-import re
-import wordninja
 
 from bokeh.io import curdoc
 from bokeh.models import HoverTool
@@ -37,7 +29,7 @@ def graph_MC_sim(simulations, num_predicted_days, end_y):
 	p.tools.append(hover_tool)
 	p.grid.grid_line_alpha=0.3
 	p.xaxis.axis_label = 'Days Out'
-	p.yaxis.axis_label = 'y'
+	p.yaxis.axis_label = 'Price'
 
 	# Plot each simulation in rotating colors
 	colors = itertools.cycle(palette)
@@ -56,7 +48,7 @@ def graph_historicals(historicals):
 	ys = [tup[1] for tup in historicals]
 
 	# Create figure
-	p = figure(title="Historical ys", name="historicals", x_axis_type='datetime')
+	p = figure(title="Historical prices", name="historicals", x_axis_type='datetime')
 
 	# Format figure
 	hover_tool = HoverTool(
@@ -68,7 +60,7 @@ def graph_historicals(historicals):
 
 	p.grid.grid_line_alpha=0.3
 	p.xaxis.axis_label = 'Date'
-	p.yaxis.axis_label = 'y'
+	p.yaxis.axis_label = 'Close Price'
 	p.xaxis.formatter=DatetimeTickFormatter(
 	    years=["%Y-%m%-d"],
 	    months=["%Y-%m-%d"],
