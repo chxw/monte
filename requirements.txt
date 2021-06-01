@@ -35,7 +35,7 @@ six==1.12.0
 SQLAlchemy==1.3.3
 statistics==1.0.3.5
 tornado==6.0.2
-urllib3==1.24.3
+urllib3==1.26.5
 Werkzeug==0.15.2
 wordninja==0.1.5
 wrapt==1.11.1
