@@ -16,7 +16,7 @@ itsdangerous==1.1.0
 Jinja2==2.10.1
 kiwisolver==1.1.0
 lxml==4.3.3
-Mako==1.0.10
+Mako==1.2.2
 MarkupSafe==1.1.1
 matplotlib==3.0.3
 numpy==1.16.3
